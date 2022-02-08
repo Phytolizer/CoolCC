@@ -18,4 +18,4 @@ CoolChibiCC: main.o
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -vf *.o CoolChibiCC
+	rm -vf *.o CoolChibiCC CoolChibiTest *.x
