@@ -1,29 +1,17 @@
-#include <fcntl.h>
 #include <stdio.h>
-#include <unistd.h>
-
-#include "coolcc.h"
+#include <stdlib.h>
 
 int main(int argc, char** argv) {
-    if (argc < 4) {
-        error("Arg count");
+    if (argc != 2) {
+        fprintf(stderr, "usage: %s <integer>\n", argv[0]);
         return 1;
     }
-    int fin = open(argv[1], O_RDONLY | O_CLOEXEC);
-    if (fin < 0) {
-        error("Can't find %s", argv[1]);
-        return 1;
-    }
-    int fout = open(argv[2], O_WRONLY | O_CREAT | O_CLOEXEC);
-    if (fout < 0) {
-        error("Can't create %s", argv[2]);
-        return 1;
-    }
-    const char* temp_file_name = argv[3];
-    // xdflg++; // ???
 
-    init("int", 0);
-    init("char", 1);
-    init("float", 2);
+    char* p = argv[1];
+
+    printf("  .globl main\n");
+    printf("main:\n");
+    printf("  mov $%d, %%rax\n", atoi(argv[1]));
+    printf("  ret\n");
     return 0;
 }
