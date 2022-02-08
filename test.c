@@ -93,6 +93,7 @@ static bool run_assertion(char* input, int expected) {
         return false;
     }
 
+    close(tempfd);
     cpid = fork();
 
     if (cpid == -1) {
@@ -134,7 +135,7 @@ static bool run_assertion(char* input, int expected) {
     return true;
 }
 
-int main(int argc, char** argv) {
+int main(void) {
     bool success = run_assertion("0", 0);
     success = success && run_assertion("42", 42);
     success = success && run_assertion("5+20-4", 21);
