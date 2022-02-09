@@ -132,6 +132,7 @@ static bool run_assertion(char* input, int expected) {
         return false;
     }
 
+    printf("PASS: '%s' -> %d\n", input, expected);
     return true;
 }
 
@@ -139,5 +140,6 @@ int main(void) {
     bool success = run_assertion("0", 0);
     success = success && run_assertion("42", 42);
     success = success && run_assertion("5+20-4", 21);
+    success = success && run_assertion(" 12 + 34 - 5 ", 41);
     return success ? 0 : 1;
 }
