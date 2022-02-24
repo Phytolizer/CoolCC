@@ -3,6 +3,7 @@ Checks: |
   -altera-*,
   -llvmlibc-*,
   -fuchsia-*,
+  -hicpp-signed-bitwise,
 CheckOptions:
   - key: readability-identifier-naming.FunctionCase
     value: lower_case
