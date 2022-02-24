@@ -7,3 +7,5 @@ project(
     DESCRIPTION "Some kind of C compiler"
     HOMEPAGE_URL "https://github.com/Phytolizer/CoolCC"
 )
+
+add_executable(character_count character_count.c)
