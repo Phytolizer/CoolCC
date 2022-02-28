@@ -4,6 +4,7 @@ Checks: |
   -llvmlibc-*,
   -fuchsia-*,
   -hicpp-signed-bitwise,
+  -android-cloexec-fopen,
 CheckOptions:
   - key: readability-identifier-naming.FunctionCase
     value: lower_case
